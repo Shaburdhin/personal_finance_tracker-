@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container"></div>
+        <h1 id="heading">Personal Finance Tracker</h1>
+        
+        <div class="flex-container">
+            <div class="flex-item">
+                <form id="transactionForm">
+                    <h2 id="log">Log Transaction</h2>
+                    <input type="text" id="description" placeholder="Description" required>
+                    <input type="number" id="amount" placeholder="Amount" required>
+                    <input type="date" id="date" required>
+                    <select id="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <select id="category">
+                        <option value="food">Food</option>
+                        <option value="rent">Rent</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="transportation">Transportation</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button type="submit">Add Transaction</button>
+                </form>
+            </div>
+            
+            <div class="flex-item">
+                <div id="savingsOverview">
+                    <h2 id="overview">Budget Overview</h2>
+                    <p>Total Budget: $<span id="totalIncome">0</span></p>
+                    <p>Total expenses: $<span id="totalExpensesOverview">0</span></p>
+                    <p>Savings: $<span id="savings">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chartContainer">
+            <h2 id="expenses">Expenses by Category</h2>
+            <canvas id="expensesChart"></canvas>
+        </div>
+       
+        <div id="transactions">
+            <h2 id="tras">Transactions</h2>
+            <div class="table-responsive">
+                <table id="transactionTable">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
